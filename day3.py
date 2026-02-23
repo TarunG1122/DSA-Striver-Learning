@@ -82,3 +82,19 @@
 ## check if a string is a palindrome
 
 
+def is_palindrome(s, left, right):
+    # Base case
+    if left >= right:
+        return True
+
+    # If characters don't match
+    if s[left] != s[right]:
+        return False
+
+    # Recursive call
+    return is_palindrome(s, left + 1, right - 1)
+
+
+# Driver code
+string = "madam"
+print(is_palindrome(string, 0, len(string) - 1))
